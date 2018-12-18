@@ -27,25 +27,38 @@ class CarCard extends Component {
               <span className="text">TEMPO RESTANTE</span>
               <span className="number red">{this.props.car.remainingTime}</span>
             </div>
+            <div className="bar-v"></div>
             <div className="col">
               <span className="text">ULTIMA OFERTA</span>
-              <span className="number red">R$</span>
+              <span className="number green">R$</span>
             </div>
-          </div>
-          
-          <div className="row">
-            {this.props.car.make} {this.props.car.model} {this.props.car.version} {this.props.car.year}
           </div>
 
+          <div className="bar-h"></div>
+          
           <div className="row">
+            <span className="text-bold-center">
+              {this.props.car.make} {this.props.car.model} {this.props.car.version} {this.props.car.year}
+            </span>
+          </div>
+
+          <div className="bar-h pb-5"></div>
+
+          <div className="row pb-5">
             <div className="col">
-              <span className="text">{this.props.car.year}</span>
+              <span className="text big">{this.props.car.year}</span>
             </div>
+            <div className="bar-v"></div>
             <div className="col">
-              <span className="text">{this.props.car.km} KM</span>
+              <span className="text big">{this.props.car.km} KM</span>
             </div>
           </div>
+
+          <div className="bar-h"></div>
+
         </div>
+
+        
 
         <div className="footer">
           <button type="btn" className="button button-green">FAZER OFERTA</button>
