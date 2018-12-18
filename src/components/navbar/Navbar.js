@@ -15,6 +15,7 @@ const Navbar = () => {
         
       <div className="phone">
         <img src={phone} />
+        <span>(11) 3569-3465</span>
       </div>
     </nav>
   );
