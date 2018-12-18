@@ -1,0 +1,32 @@
+.Navbar {
+  flex: 1 0 100%;
+  display: flex;
+  padding: 10px;
+  background-color: #ffffff; 
+  font-family: "Open Sans";
+  align-items: center;
+}
+
+.Navbar .brand {
+  padding-left: 10em;
+  padding-right: 3em;
+}
+
+.Navbar .brand img {
+  width: 200px;
+}
+
+.Navbar .bar {
+  width: 2px;
+  height: 40px;
+  background-color: #ebebeb;
+}
+
+.Navbar .phone {
+  width: 50px;
+  padding-left: 3em;
+}
+
+.Navbar .phone img {
+  width: 45px;
+}

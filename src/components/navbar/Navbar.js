@@ -1,11 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Navbar.css';
+
+import logo from "../../assets/images/logo.png";
+import phone from "../../assets/svg/phone.svg"
 
 const Navbar = () => {
   return (
-      <header className="navbar">
-          
-      </header>
+    <nav className="Navbar">
+      <div className="brand">
+        <img src={logo} />
+      </div>
+
+      <div className="bar"></div>
+        
+      <div className="phone">
+        <img src={phone} />
+      </div>
+    </nav>
   );
 };
 
