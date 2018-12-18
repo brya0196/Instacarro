@@ -14,21 +14,24 @@ const Navbar = () => {
       </div>
 
       <div className="bar"></div>
-        
-      <div className="phone">
-        <img src={phone} />
-        <span>(11) 3569-3465</span>
-      </div>
 
-      <div className="userData">
-        <div className="userInfo">
-          <img src={user} />
-          <span>USER TEST</span>
+      <div className="data">
+        <div className="phone">
+          <img src={phone} />
+          <span>(11) 3569-3465</span>
         </div>
-        <div className="arrow">
-          <img src={caret} />
+
+        <div className="userData">
+          <div className="userInfo">
+            <img src={user} />
+            <span>USER TEST</span>
+          </div>
+          <div className="arrow">
+            <img src={caret} />
+          </div>
         </div>
-      </div>
+      </div>  
+      
     </nav>
   );
 };
