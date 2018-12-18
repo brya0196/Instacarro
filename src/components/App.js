@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import './App.css';
 
 import { get } from "../services/auction";
@@ -23,7 +24,16 @@ class App extends Component {
 
   getData = () => {
     get()
-      .then(response => this.setState({ cars: response.data }))
+      .then(response => {
+        var sortedData = [];
+
+        response.data.sort((a, b) => moment.duration(a.remainingTime) - moment.duration(b.remainingTime));
+
+        for(var i in response.data) 
+          sortedData.push(response.data[i]); 
+
+        this.setState({ cars: sortedData });
+      })
       .catch(err => alert(err));
   }
 

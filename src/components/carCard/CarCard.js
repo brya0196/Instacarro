@@ -35,7 +35,7 @@ class CarCard extends Component {
     let bids = this.props.car.bids;
 
     let amount = 0;
-    bids.map((item) => {
+    bids.forEach((item) => {
       amount += Number(item.amount);
     });
 
@@ -45,29 +45,25 @@ class CarCard extends Component {
   }
 
   MilisecondsToHours(miliseconds) {
-    let time = moment.duration(miliseconds, 'milliseconds');
-    
+    let time = moment.duration(miliseconds, 'milliseconds'); 
     return time.hours() + ":" + time.minutes() + ":" + time.seconds();
   }
 
   DecreaseBySecond() {
     let time = 0;
-
     time = moment.duration(this.state.time) - 1000;
-
     this.setState({ time: time });
   }
 
   MakeOffert() {
     let amount = this.state.amount + 250;
-  
     this.setState({ amount: amount });
   }
 
   render() {
     var time = this.props.car.remainingTime;
 
-    if (this.state.time != undefined) time = this.state.time;
+    if (this.state.time !== undefined) time = this.state.time;
 
     return (
       <div className="Card">
