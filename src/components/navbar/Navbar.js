@@ -10,24 +10,24 @@ const Navbar = () => {
   return (
     <nav className="Navbar">
       <div className="brand">
-        <img src={logo} />
+        <img src={logo} alt="Instacarro" />
       </div>
 
       <div className="bar"></div>
 
       <div className="data">
         <div className="phone">
-          <img src={phone} />
+          <img src={phone} alt="Phone" />
           <span>(11) 3569-3465</span>
         </div>
 
         <div className="userData">
           <div className="userInfo">
-            <img src={user} />
+            <img src={user} alt="User" />
             <span>USER TEST</span>
           </div>
           <div className="arrow">
-            <img src={caret} />
+            <img src={caret} alt="v" />
           </div>
         </div>
       </div>  

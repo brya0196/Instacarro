@@ -10,8 +10,6 @@ class CarCard extends Component {
 
   render() {
 
-    console.log(this.props.car);
-
     return (
       <div className="Card">
 

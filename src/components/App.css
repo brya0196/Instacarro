@@ -4,14 +4,20 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.container {
-    padding: 2.5em 8em;
-}
-
 .pt-5 {
     padding-top: 5px;
 }
 
 .pb-5 {
     padding-bottom: 5px;
+}
+
+.container {
+    padding: 1em 5em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .Card {
+    margin: 11px;
 }

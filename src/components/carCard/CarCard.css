@@ -1,12 +1,15 @@
 .Card {
-    width: 330px;
+    width: 30%;
     border-radius: 5px;
     border: 2px solid #ebebeb;
     background-color: #fff;
+
+    min-width: 30%;
 }
 
 .Card .header .image {
     height: 248px;
+    width: 100%;
     border: 0.1px solid transparent;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -91,6 +94,9 @@
     font-weight: bolder;
     color: #323232;
     padding: 0.5em 2em;
+    min-height: 65px;
+    display: flex;
+    align-items: center;
 }
 
 .button-green {
