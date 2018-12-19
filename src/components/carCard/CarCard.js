@@ -118,7 +118,7 @@ class CarCard extends Component {
         
 
         <div className="footer">
-          {(Number(this.state.time) !== 0) ? 
+          {(Number(this.state.time) >= 0) ? 
             <button type="btn" className="button button-green" onClick={() => this.MakeOffert()}>FAZER OFERTA</button>
           : <button type="btn" className="button button-green" disabled >FAZER OFERTA</button> }
           
