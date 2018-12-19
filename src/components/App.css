@@ -13,11 +13,37 @@ body {
 }
 
 .container {
-    padding: 1em 5em;
+    padding: 2em 10em;
     display: flex;
     flex-wrap: wrap;
 }
 
 .container .Card {
-    margin: 11px;
+    margin: 5px 15px;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 5px 2px;
+    }
+
+    .container .Card {
+        margin: 5px 15px;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 15px 5px;
+    }
+
+    .container .Card {
+        margin: 5px 5px;
+    }
 }

@@ -111,3 +111,36 @@
     font-size: 12px;
     border-radius: 3px;
 }
+
+@media (max-width: 1200px) {
+    .Card .body .row {
+        padding: 5px 0;
+    }
+
+    .Card .body .row .text-bold-center {
+        font-size: 13px;
+        padding: 0.5em 1em;
+        min-height: 50px;
+    }
+
+    .Card .body .row .col .text {
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+    .Card .body .row .col .number {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 800px) {
+    .Card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 500px) {
+    .Card {
+        width: 100%;
+    }
+}

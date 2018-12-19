@@ -50,16 +50,10 @@ class CarCard extends Component {
   }
 
   DecreaseRemainingTimeBySecond() {
-    let time = 0;
-    time = moment.duration(this.state.time) - 1000;
-    if (this.state.time === 0) time = 0;
-    this.setState({ time: time });
+    if (this.state.time > 0) this.setState({ time: moment.duration(this.state.time) - 1000 });
   }
 
-  MakeOffert() {
-    let amount = this.state.amount + 250;
-    this.setState({ amount: amount });
-  }
+  MakeOffert = () => this.setState({ amount: this.state.amount + 250 });
 
   render() {
     var time = this.props.car.remainingTime;
@@ -100,7 +94,7 @@ class CarCard extends Component {
 
           <div className="bar-h pb-5"></div>
 
-          <div className="row pb-5">
+          <div className="row">
             <div className="col">
               <span className="text big">{this.props.car.year}</span>
             </div>
@@ -117,7 +111,7 @@ class CarCard extends Component {
         
 
         <div className="footer">
-          <button type="btn" className="button button-green" onClick={() => this.MakeOffert()}>FAZER OFERTA</button>
+          <button type="btn" className="button button-green" disabled={this.state.time > 0} onClick={() => this.MakeOffert()}>FAZER OFERTA</button>
         </div>
 
       </div>
