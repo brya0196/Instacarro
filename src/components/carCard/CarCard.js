@@ -46,8 +46,12 @@ class CarCard extends Component {
 
   MilisecondsToHours(miliseconds) {
     let time = moment.duration(miliseconds, 'milliseconds'); 
-
-    return moment.utc(time.as('milliseconds')).format('HH:mm:ss');
+    if(miliseconds > 0) {
+      time = moment.utc(time.as('milliseconds')).format('HH:mm:ss')
+    } else {
+      time = "00:00:00";
+    }
+    return time;
   }
 
   DecreaseRemainingTimeBySecond() {
