@@ -21,7 +21,7 @@ class CarCard extends Component {
 
   componentDidMount() {
     this.CalculateAmount();
-    this.interval = setInterval(() => this.DecreaseRemainingTimeBySecond(), 1000);
+    if (this.state.time != 0) this.interval = setInterval(() => this.DecreaseRemainingTimeBySecond(), 1000);
     this.setState({ 
       time: this.props.car.remainingTime
     });
@@ -46,7 +46,8 @@ class CarCard extends Component {
 
   MilisecondsToHours(miliseconds) {
     let time = moment.duration(miliseconds, 'milliseconds'); 
-    return time.hours()+ ":" + time.minutes() + ":" + time.seconds();
+
+    return moment.utc(time.as('milliseconds')).format('HH:mm:ss');
   }
 
   DecreaseRemainingTimeBySecond() {
@@ -94,7 +95,7 @@ class CarCard extends Component {
             </span>
           </div>
 
-          <div className="bar-h pb-5"></div>
+          <div className="bar-h"></div>
 
           <div className="row">
             <div className="col">
@@ -106,14 +107,17 @@ class CarCard extends Component {
             </div>
           </div>
 
-          <div className="bar-h"></div>
+          <div className="bar-h pb-5"></div>
 
         </div>
 
         
 
         <div className="footer">
-          <button type="btn" className="button button-green" disabled={(this.state.time === 0) ? true : false } onClick={() => this.MakeOffert()}>FAZER OFERTA</button>
+          {(this.state.time != 0) ? 
+            <button type="btn" className="button button-green" onClick={() => this.MakeOffert()}>FAZER OFERTA</button>
+          : <button type="btn" className="button butto-green" disabled >FAZER OFERTA</button> }
+          
         </div>
 
       </div>
