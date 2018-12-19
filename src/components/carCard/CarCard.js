@@ -15,13 +15,13 @@ class CarCard extends Component {
 
     this.CalculateAmount = this.CalculateAmount.bind(this);
     this.MilisecondsToHours = this.MilisecondsToHours.bind(this);
-    this.DecreaseBySecond = this.DecreaseBySecond.bind(this);
+    this.DecreaseRemainingTimeBySecond = this.DecreaseRemainingTimeBySecond.bind(this);
     this.MakeOffert = this.MakeOffert.bind(this);
   }
 
   componentDidMount() {
     this.CalculateAmount();
-    this.interval = setInterval(() => this.DecreaseBySecond(), 1000);
+    this.interval = setInterval(() => this.DecreaseRemainingTimeBySecond(), 1000);
     this.setState({ 
       time: this.props.car.remainingTime
     });
@@ -46,12 +46,13 @@ class CarCard extends Component {
 
   MilisecondsToHours(miliseconds) {
     let time = moment.duration(miliseconds, 'milliseconds'); 
-    return time.hours() + ":" + time.minutes() + ":" + time.seconds();
+    return time.hours()+ ":" + time.minutes() + ":" + time.seconds();
   }
 
-  DecreaseBySecond() {
+  DecreaseRemainingTimeBySecond() {
     let time = 0;
     time = moment.duration(this.state.time) - 1000;
+    if (this.state.time === 0) time = 0;
     this.setState({ time: time });
   }
 
