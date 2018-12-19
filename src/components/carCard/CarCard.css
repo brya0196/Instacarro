@@ -3,12 +3,10 @@
     border-radius: 5px;
     border: 2px solid #ebebeb;
     background-color: #fff;
-
-    min-width: 30%;
 }
 
 .Card .header .image {
-    height: 248px;
+    height: 250px;
     width: 100%;
     border: 0.1px solid transparent;
     border-top-left-radius: 5px;
@@ -67,7 +65,8 @@
 }
 
 .Card .body .row .col .number {
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 900;
 }
 
 .Card .body .bar-v {
@@ -91,7 +90,7 @@
 
 .Card .body .row .text-bold-center {
     font-size: 16px;
-    font-weight: bolder;
+    font-weight: 900;
     color: #323232;
     padding: 0.5em 2em;
     min-height: 65px;
@@ -106,13 +105,19 @@
 
 .button {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border: 0;
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: 600;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 @media (max-width: 1200px) {
+    .Card .header .image {
+        height: 200px;
+    }
+
     .Card .body .row {
         padding: 5px 0;
     }

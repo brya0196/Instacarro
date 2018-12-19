@@ -55,6 +55,8 @@ class CarCard extends Component {
 
   MakeOffert = () => this.setState({ amount: this.state.amount + 250 });
 
+  NumberFormat = (number) => Number(number).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
   render() {
     var time = this.props.car.remainingTime;
 
@@ -80,7 +82,7 @@ class CarCard extends Component {
             <div className="bar-v"></div>
             <div className="col">
               <span className="text">ULTIMA OFERTA</span>
-              <span className="number green">R$ {this.state.amount}</span>
+              <span className="number green">R$ {this.NumberFormat(this.state.amount)}</span>
             </div>
           </div>
 
@@ -100,7 +102,7 @@ class CarCard extends Component {
             </div>
             <div className="bar-v"></div>
             <div className="col">
-              <span className="text big">{this.props.car.km} KM</span>
+              <span className="text big">{this.NumberFormat(this.props.car.km)} KM</span>
             </div>
           </div>
 
@@ -111,7 +113,7 @@ class CarCard extends Component {
         
 
         <div className="footer">
-          <button type="btn" className="button button-green" disabled={this.state.time > 0} onClick={() => this.MakeOffert()}>FAZER OFERTA</button>
+          <button type="btn" className="button button-green" disabled={(this.state.time === 0) ? true : false } onClick={() => this.MakeOffert()}>FAZER OFERTA</button>
         </div>
 
       </div>
